@@ -1,0 +1,14 @@
+int maxSumDivThree(vector<int>& nums) {
+        int dp[3]={0};
+        for(int i=0;i<nums.size();i++)
+        {
+            int a=dp[0]+nums[i];
+            int b=dp[1]+nums[i];
+            int c=dp[2]+nums[i];
+            dp[a%3]=max(dp[a%3],a);
+            dp[b%3]=max(dp[b%3],b);
+            dp[c%3]=max(dp[c%3],c);
+        }
+        return dp[0];
+        
+    }
